@@ -19,6 +19,7 @@ ENV NODEJS_ALLOW_SUPERUSER 1
 ENV NPM_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
 RUN npm install && composer install
+RUN npx tailwindcss init
 RUN php artisan db:wipe --drop-types --force && php artisan migrate:install
 RUN npm run build 
 
