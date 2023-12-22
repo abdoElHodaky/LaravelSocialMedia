@@ -23,4 +23,4 @@ RUN npm install && composer install
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 EXPOSE 80 
-CMD ["./migrate.sh"]
+RUN php artisan migrate:refresh --force && php artisan db:seed --force
