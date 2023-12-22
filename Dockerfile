@@ -24,4 +24,4 @@ RUN npm run build
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 EXPOSE 80 
-RUN php artisan migrate:refresh --force && php artisan db:seed --force
+RUN php artisan migrate --force && php artisan db:seed --force
