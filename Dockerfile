@@ -18,8 +18,9 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV PHP_ALLOW_SUPERUSER 1
 ENV NODEJS_ALLOW_SUPERUSER 1
 ENV NPM_ALLOW_SUPERUSER 1
-RUN npm install && composer update
-RUN php artisan migrate:fresh
+RUN chmod 777 .
+RUN npm install && composer install
+RUN php artisan migrate:fresh 
 RUN php artisan db:seed
 
 ENV YARN_ALLOW_SUPERUSER 1
