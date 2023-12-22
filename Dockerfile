@@ -1,6 +1,6 @@
 FROM richarvey/nginx-php-fpm:2.1.2
 RUN apk add -U --no-cache nghttp2-dev nodejs npm unzip tzdata
-COPY . /var/www
+COPY . /var/www/html
 
 ENV SKIP_COMPOSER 0
 ENV PHP_ERRORS_STDERR 1
@@ -20,4 +20,4 @@ ENV NPM_ALLOW_SUPERUSER 1
 RUN npm install && composer install
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
-EXPOSE 80 80
+EXPOSE 80 
