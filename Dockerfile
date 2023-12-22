@@ -2,7 +2,6 @@ FROM richarvey/nginx-php-fpm:2.1.2
 RUN apk add -U --no-cache nghttp2-dev nodejs npm unzip tzdata
 COPY . /var/www
 
-ENV WEBROOT /var/www/public
 ENV SKIP_COMPOSER 0
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
