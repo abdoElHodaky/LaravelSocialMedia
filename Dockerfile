@@ -20,8 +20,8 @@ ENV NPM_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
 RUN npm install && composer install
 RUN npm run build
-
+RUN php artisan db:wipe --drop-types --force
+RUN php artisan migrate:refesh --seed
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 EXPOSE 80 
-RUN php artisan migrate --force && php artisan db:seed --force
