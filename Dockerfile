@@ -24,4 +24,4 @@ RUN php artisan migrate:refresh --force
 RUN php artisan db:seed --force
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
-EXPOSE 80 
+EXPOSE 80 80
