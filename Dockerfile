@@ -24,4 +24,4 @@ RUN npm install && composer install
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 EXPOSE 80 
-CMD ["bash","-c","php artisan migrate -y && php artisan db:seed -y"]
+CMD ["bash","-c","php artisan migrate && php artisan db:seed"]
