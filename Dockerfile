@@ -27,4 +27,3 @@ RUN php artisan db:seed --force
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 EXPOSE 80 80
-CMD ["./migrate.sh"]
