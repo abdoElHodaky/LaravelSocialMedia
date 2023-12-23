@@ -19,9 +19,13 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+       
+          @vite(["/resources/css/app.css"])
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+         <!-- Scripts -->
+       
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gradient-to-b from-gray-700 to-gray-900 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
