@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        @vite("/resources/css/app.css")
+        @vite(["/resources/css/app.css","/resources/js/dashboard.js"])
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -26,7 +26,7 @@
             </main>
         </div>
     </body>
-    @vite("/resources/js/dashboard.js")
+    
     <footer class="bg-gray-400 p-6">
             <p class="text-center text-gray-600 font-semibold">&copy; Copyright {{ date('Y') }}</p>
     </footer>
