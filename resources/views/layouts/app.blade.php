@@ -26,7 +26,7 @@
             </main>
         </div>
     </body>
-
+    @vite("/resources/dashboard.js")
     <footer class="bg-gray-400 p-6">
             <p class="text-center text-gray-600 font-semibold">&copy; Copyright {{ date('Y') }}</p>
     </footer>
