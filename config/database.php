@@ -14,7 +14,7 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
+    //postgres://umaxstav:x8ZF3FS0--UjTzboRWnxkxe3JMjCSOqn@manny.db.elephantsql.com/umaxstav
     'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
