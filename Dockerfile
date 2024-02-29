@@ -12,6 +12,7 @@ ENV APP_KEY base64:B6l/H5fSpR60Y+MpcKP22Z1B4Us7adD+jJrln8XOcpQ=
 ENV APP_ENV production
 ENV APP_DEBUG true
 ENV LOG_CHANNEL stderr
+ENV APP_URL 0.0.0.0
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
@@ -24,4 +25,4 @@ RUN npm install && composer install
 RUN php artisan db:wipe --drop-types --force && php artisan migrate:install
 RUN php artisan migrate --force
 RUN php artisan db:seed --force
-EXPOSE 80 80
+EXPOSE 80 81
