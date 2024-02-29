@@ -15,7 +15,7 @@ return [
     |
     */
     //postgres://umaxstav:x8ZF3FS0--UjTzboRWnxkxe3JMjCSOqn@manny.db.elephantsql.com/umaxstav
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,11 +46,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'sql.db4free.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'laravelsocialmdi'),
+            'username' => env('DB_USERNAME', 'abdo_laravelsoc'),
+            'password' => env('DB_PASSWORD', 'arh.279348'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
