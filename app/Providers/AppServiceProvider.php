@@ -58,5 +58,8 @@ class AppServiceProvider extends ServiceProvider
                 ->with('num_of_categories', $num_of_categories)
                 ->with('num_of_comments', $num_of_comments);
         });
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 }
