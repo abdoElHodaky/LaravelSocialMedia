@@ -7,7 +7,8 @@
     "background_color": "#6777ef",
     "description": "Tutorial of Laravel Package",
     "display": "fullscreen",
-    "orientation":"auto",
+    "dir":"auto",
+    "orientation":"natural",
     "theme_color": "#6777ef",
     "icons": [
         {
