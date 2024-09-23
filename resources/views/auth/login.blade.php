@@ -77,7 +77,7 @@
             </div>
         </form>
         <div class="header-text flex items-center justify-between mt-4">
-                <p>Demo Admin Account <br>
+                <p class="text-lime-400">Demo Admin Account <br>
                 Username : admin@example.com <br>
                 Password : admin</p>
         </div>
