@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="theme-color" content="#6777ef"/>
-         <link rel="favicon" href="{{assets('logo.png')}}">
+         <link rel="favicon" href="{{asset('logo.png')}}">
          
         <title>{{ config('app.name', 'Laravel') }}</title>
       
