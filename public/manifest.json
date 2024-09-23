@@ -1,17 +1,16 @@
 {
-    "name": "LaravelSocial",
-    "short_name": "LSM",
-    "start_url": "/index.php",
-    "scope":"/",
-    "id":"LSM-H5fSpR60Y",
-    "background_color": "#6777ef",
-    "description": "Tutorial of Laravel Package",
-    "display": "fullscreen",
-    "dir":"auto",
-    "orientation":"natural",
-    "theme_color": "#6777ef",
-    "icons": 
-    [
+  "name": "LaravelSocial",
+  "short_name": "LSM",
+  "start_url": "/index.php",
+  "scope": "/",
+  "id": "LSM-H5fSpR60Y",
+  "background_color": "#6777ef",
+  "description": "Tutorial of Laravel Package",
+  "display": "fullscreen",
+  "dir": "auto",
+  "orientation": "natural",
+  "theme_color": "#6777ef",
+  "icons": [
     {
       "src": "16.png",
       "sizes": "16x16"
@@ -116,5 +115,8 @@
       "src": "1024.png",
       "sizes": "1024x1024"
     }
+  ],
+  "categories": [
+    "social"
   ]
 }
