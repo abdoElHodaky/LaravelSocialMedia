@@ -51,6 +51,8 @@
    <script src="
 https://unpkg.com/browse/tailwindcss@4.0.0-alpha.24/lib/index.min.js
 "></script>
+        <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+ 
     <script>eruda.init();</script>
     </body>
     
