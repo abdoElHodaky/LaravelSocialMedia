@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="theme-color" content="#6777ef"/>
-         <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+         <link rel="apple-touch-icon" sizes="64x64" href="{{ asset('64.png') }}">
+         <link rel="apple-touch-icon" sizes="16x16" href="{{ asset('16.png') }}">
+         <link rel="apple-touch-icon" sizes="128x128" href="{{ asset('128.png') }}">
+         
          <link rel="manifest" href="{{ asset('/manifest.json') }}">
         
         <title>{{ config('app.name', 'Laravel') }}</title>
