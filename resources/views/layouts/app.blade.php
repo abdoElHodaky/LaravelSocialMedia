@@ -32,7 +32,6 @@
                 @yield('container')
             </main>
         </div>
-        <script src="/sw.js"></script>
 <script>
    if ("serviceWorker" in navigator) {
       // Register a service worker hosted at the root of the
