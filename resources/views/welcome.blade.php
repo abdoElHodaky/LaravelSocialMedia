@@ -42,7 +42,7 @@
                 </div>
 
                 @if (Route::has('login'))
-                    <div class="top-0 right-0 px-6 py-4 flex justify-center">
+                    <div class="top-0 right-0 px-6 py-4 flex justify-center" id="auth">
                         @auth
                             <a href="{{ url('/dashboard') }}" class="text-xs text-gray-200 dark:text-gray-500 uppercase font-semibold tracking-wides">Dashboard</a>
                         @else
@@ -109,7 +109,7 @@
         btn.onclick = function() {
           installPWA();
         }
-        document.body.appendChild(btn);
+        document.querySelector("#auth").appendChild(btn);
     }
     function installPWA() {
         if (window.deferredPrompt) {
@@ -133,7 +133,9 @@
 </script>
    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
  
-    <script>eruda.init();</script>
+    <script>eruda.init();
+     installButtonDisplay()
+    </script>
  
     </body>
 </html>
