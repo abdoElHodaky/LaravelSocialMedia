@@ -13,8 +13,6 @@
             <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         @vite([
-        "public/manifest.json",
-        "public/sw.js",
         "resources/css/app.css",
         "resources/js/dashboard.js",
         ])
