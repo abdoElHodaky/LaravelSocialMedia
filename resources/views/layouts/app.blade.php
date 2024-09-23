@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
+         <meta name="theme-color" content="#6777ef"/>
+         <link rel="apple-touch-icon" href="/logo.png">
+         <link rel="manifest" href="/manifest.json">
+     
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- PWA  -->
-         <meta name="theme-color" content="#6777ef"/>
-         <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-         <link rel="manifest" href="{{ asset('/manifest.json') }}">
-        <!-- Fonts -->
+            <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
         @vite(["resources/css/app.css","resources/js/dashboard.js"])
         <!-- Scripts -->
@@ -28,7 +28,7 @@
                 @yield('container')
             </main>
         </div>
-        <script src="{{ asset('/sw.js') }}"></script>
+        <script src="'/sw.js"></script>
 <script>
    if ("serviceWorker" in navigator) {
       // Register a service worker hosted at the root of the
