@@ -50,9 +50,8 @@
      console.error("Service workers are not supported.");
   }
 </script>
-   <script src="
-https://unpkg.com/browse/tailwindcss@4.0.0-alpha.24/lib/index.min.js
-"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+      
         <script src="//cdn.jsdelivr.net/npm/eruda"></script>
  
     <script>eruda.init();</script>
