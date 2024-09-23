@@ -45,7 +45,7 @@
                 </div>
 
                 @if (Route::has('login'))
-                    <div class="top-0 right-0 px-6 py-4 flex justify-center" id="auth">
+                    <div class="top-0 right-0 px-10 py-10 flex justify-center" id="auth">
                         @auth
                             <a href="{{ url('/dashboard') }}" class="text-xs text-gray-200 dark:text-gray-500 uppercase font-semibold tracking-wides">Dashboard</a>
                         @else
@@ -107,7 +107,7 @@
     function installButtonDisplay() {
         var btn = document.createElement("BUTTON");
         btn.setAttribute("id", "install-button");
-        btn.innerHTML = "Download Web-App";
+        btn.innerHTML = "Download LSM-App";
         btn.setAttribute("class","bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center")
         btn.onclick = function() {
           installPWA();
