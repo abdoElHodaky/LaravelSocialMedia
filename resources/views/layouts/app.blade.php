@@ -5,14 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
          <meta name="theme-color" content="#6777ef"/>
-         <link rel="apple-touch-icon" href="/logo.png">
-         <link rel="manifest" href="/manifest.json">
-     
+         <link rel="favicon" href="{{assets('logo.png')}}">
+         
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- PWA  -->
             <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        @vite(["resources/css/app.css","resources/js/dashboard.js"])
+        @vite([
+        "public/manifest.json",
+        "public/sw.js",
+        "resources/css/app.css",
+        "resources/js/dashboard.js",
+        ])
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
