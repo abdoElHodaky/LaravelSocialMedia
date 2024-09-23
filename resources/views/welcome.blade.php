@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="theme-color" content="#6777ef"/>
-         <link rel="favicon" href="{{asset('logo.png')}}">
-         
+         <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+         <link rel="manifest" href="{{ asset('/manifest.json') }}">
+        
         <title>{{ config('app.name', 'Laravel') }}</title>
       
 
@@ -22,10 +23,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        @vite(["resources/css/app.css",
-        "public/manifest.json",
-        "public/sw.js",
-        ])
+        @vite(["resources/css/app.css"])
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -66,7 +64,8 @@
                 </div>
             </div>
         </div>
-
+        
+    <script src="{{ asset('/sw.js') }}"></script>
         <script>
    if ("serviceWorker" in navigator) {
       // Register a service worker hosted at the root of the
