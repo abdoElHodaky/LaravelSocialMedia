@@ -28,7 +28,7 @@
                 @yield('container')
             </main>
         </div>
-        <script src="'/sw.js"></script>
+        <script src="/sw.js"></script>
 <script>
    if ("serviceWorker" in navigator) {
       // Register a service worker hosted at the root of the
@@ -45,6 +45,10 @@
      console.error("Service workers are not supported.");
   }
 </script>
+   <script src="
+https://unpkg.com/browse/tailwindcss@4.0.0-alpha.24/lib/index.min.js
+"></script>
+    <script>eruda.init();</script>
     </body>
     
     <footer class="bg-gray-400 p-6">
