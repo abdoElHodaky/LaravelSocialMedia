@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+         <meta name="theme-color" content="#6777ef"/>
+         <link rel="favicon" href="{{assets('logo.png')}}">
+         
+        <title>{{ config('app.name', 'Laravel') }}</title>
+      
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +22,10 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        @vite(["resources/css/app.css"])
+        @vite(["resources/css/app.css",
+        "public/manifest.json",
+        "public/sw.js",
+        ])
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -60,5 +66,26 @@
                 </div>
             </div>
         </div>
+
+        <script>
+   if ("serviceWorker" in navigator) {
+      // Register a service worker hosted at the root of the
+      // site using the default scope.
+      navigator.serviceWorker.register("/sw.js").then(
+      (registration) => {
+         console.log("Service worker registration succeeded:", registration);
+      },
+      (error) => {
+         console.error(`Service worker registration failed: ${error}`);
+      },
+    );
+  } else {
+     console.error("Service workers are not supported.");
+  }
+</script>
+   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+ 
+    <script>eruda.init();</script>
+ 
     </body>
 </html>
