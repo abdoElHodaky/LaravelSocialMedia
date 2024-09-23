@@ -22,11 +22,10 @@ ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
 RUN npm install && \
-composer require ladumor/laravel-pwa && \
-php artisan laravel-pwa:publish
+composer install 
 #RUN php artisan db:wipe --drop-types --force 
 #RUN php artisan migrate:install
 #RUN php artisan migrate --force
 #RUN php artisan db:seed --force
 EXPOSE 80 81
-CMD ["php artisan","serve -p 80"]
+#CMD ["php artisan","serve -p 80"]
