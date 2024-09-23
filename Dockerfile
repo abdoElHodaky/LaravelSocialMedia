@@ -21,7 +21,8 @@ ENV NPM_ALLOW_SUPERUSER 1
 ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
-RUN npm install && composer install
+RUN npm install && composer install && \
+composer require --dev ladumor/laravel-pwa
 #RUN php artisan db:wipe --drop-types --force 
 #RUN php artisan migrate:install
 #RUN php artisan migrate --force
