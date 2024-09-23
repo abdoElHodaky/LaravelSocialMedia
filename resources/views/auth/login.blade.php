@@ -73,6 +73,11 @@
                 <x-button type="green" class="ml-3 px-3">
                     {{ __('Log in') }}
                 </x-button>
+                <div class="header-text mt-4">
+                    <p>Demo Admin Account <br>
+                        Username : admin@example.com <br>
+                        Password : admin</p>
+                </div>
             </div>
         </form>
     </x-auth-card>
