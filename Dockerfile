@@ -29,3 +29,4 @@ php artisan laravel-pwa:publish
 #RUN php artisan migrate --force
 #RUN php artisan db:seed --force
 EXPOSE 80 81
+CMD ["php artisan","serve -p 80"]
