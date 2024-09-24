@@ -11,8 +11,9 @@ const queue=new Queue("requests")
 workbox.setConfig({
     debug:true
 });
+const CACHE="LMS_Cache";
 const preLoad = function () {
-    return caches.open("offline").then(function (cache) {
+    return caches.open(CACHE).then(function (cache) {
         // caching index and important routes
         return cache.addAll(filesToCache);
     });
@@ -40,7 +41,7 @@ const checkResponse = function (request) {
 };
 
 const addToCache = function (request) {
-    return caches.open("offline").then(function (cache) {
+    return caches.open(CACHE).then(function (cache) {
         return fetch(request).then(function (response) {
             return cache.put(request, response);
         });
@@ -101,7 +102,7 @@ const networkWithFallbackStrategy = new NetworkOnly({
     {
       handlerDidError: async () => {
         return await caches.match("offline.html", {
-          cacheName: "offline",
+          cacheName: CACHE,
         });
       },
     },
