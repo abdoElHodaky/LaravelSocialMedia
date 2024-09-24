@@ -67,6 +67,9 @@ const addToCache = function (request) {
         event.waitUntil(addToCache(event.request));
     }
 });*/
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
