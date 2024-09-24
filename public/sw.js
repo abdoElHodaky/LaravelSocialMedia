@@ -89,4 +89,26 @@ registerRoute(
              ],
   })
 );
+registerRoute(
+  ({request}) => request.destination === 'style',
+  new CacheFirst({
+    cacheName:"styles",
+    plugins: [new CacheableResponsePlugin({statuses: [0, 200]}),
+              new ExpirationPlugin({
+              maxEntries: 60,
+              maxAgeSeconds: 30 * 24 * 60 * 60 }),
+             ],
+  })
+);
+registerRoute(
+  ({request}) => request.destination === 'script',
+  new CacheFirst({
+      cacheName:"scripts",
+    plugins: [new CacheableResponsePlugin({statuses: [0, 200]}),
+              new ExpirationPlugin({
+              maxEntries: 60,
+              maxAgeSeconds: 30 * 24 * 60 * 60 }),
+             ],
+  })
+);
 
