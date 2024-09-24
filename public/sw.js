@@ -3,7 +3,7 @@ importScripts(
 );
 
 const {registerRoute, NavigationRoute } = workbox.routing;
-const {CacheFirst,NetworkOnly} = workbox.strategies;
+const {CacheFirst,NetworkOnly,NetworkFirst} = workbox.strategies;
 const {CacheableResponse} = workbox.cacheableResponse;
 const {ExpirationPlugin}=workbox.ExpirationPlugin
 
@@ -104,11 +104,31 @@ registerRoute(
   ({request}) => request.destination === 'script',
   new CacheFirst({
       cacheName:"scripts",
-    plugins: [new CacheableResponsePlugin({statuses: [0, 200]}),
+      plugins: [new CacheableResponsePlugin({statuses: [0, 200]}),
               new ExpirationPlugin({
               maxEntries: 60,
-              maxAgeSeconds: 30 * 24 * 60 * 60 }),
+              maxAgeSeconds: 30 * 24 * 60 * 60 ,
+              
+              }),
              ],
   })
 );
 
+
+registerRoute(
+  new Route(({url}) => {
+  return url.includes("cdn") == true;
+}, new NetworkFirst({
+  cacheName:"cdns",
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
+      new ExpirationPlugin({
+       maxEntries: 60,
+       maxAgeSeconds: 30 * 24 * 60 * 60 ,
+       purgeOnQuotaError: true
+        })
+  ]
+}))
+);
