@@ -2,7 +2,7 @@ importScripts(
   'https://storage.googleapis.com/workbox-cdn/releases/7.1.0/workbox-sw.js'
 );
 
-const {registerRoute, NavigationRoute } = workbox.routing;
+const {registerRoute, NavigationRoute,Route } = workbox.routing;
 const {CacheFirst,NetworkOnly,NetworkFirst} = workbox.strategies;
 const {CacheableResponse} = workbox.cacheableResponse;
 const {ExpirationPlugin}=workbox.ExpirationPlugin
