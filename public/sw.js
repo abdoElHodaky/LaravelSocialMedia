@@ -67,7 +67,11 @@ const addToCache = function (request) {
         event.waitUntil(addToCache(event.request));
     }
 });*/
-
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
 self.addEventListener('fetch', (event) => {
   // Add in your own criteria here to return early if this
   // isn't a request that should use background sync.
