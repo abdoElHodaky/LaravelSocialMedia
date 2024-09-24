@@ -6,7 +6,9 @@ const {registerRoute, NavigationRoute } = workbox.routing;
 const {CacheFirst,NetworkOnly,NetworkFirst} = workbox.strategies;
 const {CacheableResponse} = workbox.cacheableResponse;
 const {ExpirationPlugin}=workbox.ExpirationPlugin
-
+workbox.setConfig({
+    debug:true
+});
 const preLoad = function () {
     return caches.open("offline").then(function (cache) {
         // caching index and important routes
@@ -55,21 +57,21 @@ const addToCache = function (request) {
     });
 };*/
 
-self.addEventListener("fetch", function (event) {
+/*self.addEventListener("fetch", function (event) {
     event.respondWith(checkResponse(event.request).catch(function () {
         return returnFromCache(event.request);
     }));
     if(!event.request.url.startsWith('http')){
         event.waitUntil(addToCache(event.request));
     }
-});
+});*/
 
 const networkWithFallbackStrategy = new NetworkOnly({
   networkTimeoutSeconds: 5,
   plugins: [
     {
       handlerDidError: async () => {
-        return await caches.match("/offline.html", {
+        return await caches.match("offline.html", {
           cacheName: "offline",
         });
       },
