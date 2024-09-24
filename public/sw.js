@@ -6,6 +6,8 @@ const {registerRoute, NavigationRoute } = workbox.routing;
 const {CacheFirst,NetworkOnly,NetworkFirst} = workbox.strategies;
 const {CacheableResponse} = workbox.cacheableResponse;
 const {ExpirationPlugin}=workbox.ExpirationPlugin
+const {BackgroundSyncPlugin,Queue}=workbox.BackgroundSyncPlugin
+const queue=new Queue("requests")
 workbox.setConfig({
     debug:true
 });
@@ -65,6 +67,26 @@ const addToCache = function (request) {
         event.waitUntil(addToCache(event.request));
     }
 });*/
+
+self.addEventListener('fetch', (event) => {
+  // Add in your own criteria here to return early if this
+  // isn't a request that should use background sync.
+  if (event.request.method !== 'POST') {
+    return;
+  }
+
+  const bgSyncLogic = async () => {
+    try {
+      const response = await fetch(event.request.clone());
+      return response;
+    } catch (error) {
+      await queue.pushRequest({request: event.request});
+      return error;
+    }
+  };
+
+  event.respondWith(bgSyncLogic());
+});
 
 const networkWithFallbackStrategy = new NetworkOnly({
   networkTimeoutSeconds: 5,
