@@ -1,6 +1,12 @@
 importScripts(
   'https://storage.googleapis.com/workbox-cdn/releases/7.1.0/workbox-sw.js'
 );
+
+const {registerRoute, NavigationRoute } = workbox.routing;
+const {CacheFirst,NetworkOnly} = workbox.strategies;
+const {CacheableResponse} = workbox.cacheableResponse;
+const {ExpirationPlugin}=workbox.ExpirationPlugin
+
 const preLoad = function () {
     return caches.open("offline").then(function (cache) {
         // caching index and important routes
@@ -37,7 +43,7 @@ const addToCache = function (request) {
     });
 };
 
-const returnFromCache = function (request) {
+/*const returnFromCache = function (request) {
     return caches.open("offline").then(function (cache) {
         return cache.match(request).then(function (matching) {
             if (!matching || matching.status === 404) {
@@ -47,7 +53,7 @@ const returnFromCache = function (request) {
             }
         });
     });
-};
+};*/
 
 self.addEventListener("fetch", function (event) {
     event.respondWith(checkResponse(event.request).catch(function () {
@@ -57,11 +63,22 @@ self.addEventListener("fetch", function (event) {
         event.waitUntil(addToCache(event.request));
     }
 });
-if(workbox){
-const {registerRoute} = workbox.routing;
-const {CacheFirst} = workbox.strategies;
-const {CacheableResponse} = workbox.cacheableResponse;
-const {ExpirationPlugin}=workbox.ExpirationPlugin
+
+const networkWithFallbackStrategy = new NetworkOnly({
+  networkTimeoutSeconds: 5,
+  plugins: [
+    {
+      handlerDidError: async () => {
+        return await caches.match("/offline.html", {
+          cacheName: "offline",
+        });
+      },
+    },
+  ],
+});
+
+// Register the route to handle all navigations.
+registerRoute(new NavigationRoute(networkWithFallbackStrategy));
 registerRoute(
   ({request}) => request.destination === 'image',
   new CacheFirst({
@@ -72,4 +89,4 @@ registerRoute(
              ],
   })
 );
-}
+
