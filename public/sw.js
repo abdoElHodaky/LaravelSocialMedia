@@ -1,3 +1,6 @@
+importScripts(
+  'https://storage.googleapis.com/workbox-cdn/releases/7.1.0/workbox-sw.js'
+);
 const preLoad = function () {
     return caches.open("offline").then(function (cache) {
         // caching index and important routes
@@ -54,3 +57,19 @@ self.addEventListener("fetch", function (event) {
         event.waitUntil(addToCache(event.request));
     }
 });
+if(workbox){
+const {registerRoute} = workbox.routing;
+const {CacheFirst} = workbox.strategies;
+const {CacheableResponse} = workbox.cacheableResponse;
+const {ExpirationPlugin}=workbox.ExpirationPlugin
+registerRoute(
+  ({request}) => request.destination === 'image',
+  new CacheFirst({
+    plugins: [new CacheableResponsePlugin({statuses: [0, 200]}),
+              new ExpirationPlugin({
+              maxEntries: 60,
+              maxAgeSeconds: 30 * 24 * 60 * 60 }),
+             ],
+  })
+);
+}
