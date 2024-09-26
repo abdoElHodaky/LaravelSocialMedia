@@ -1,8 +1,7 @@
 
    if ("serviceWorker" in navigator) {
       navigator.serviceWorker.
-  getRegistration("/").then(d=>{if(d)
-   if(d) return d.update()
+  getRegistration("/").then(d=>{if(d) return d.update()
   }).catch(console.log)
       navigator.serviceWorker.register("/sw.js").then(
       (registration) => {
