@@ -128,5 +128,8 @@
   ],
   "edge_side_panel": {
     "preferred_width": 100
-  }
+  },
+    "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+    }
 }
