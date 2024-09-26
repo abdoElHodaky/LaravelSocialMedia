@@ -1,7 +1,9 @@
 
    if ("serviceWorker" in navigator) {
-      // Register a service worker hosted at the root of the
-      // site using the default scope.
+      navigator.serviceWorker.
+  getRegistration("/").then(d=>{if(d)
+   if(d) return d.update()
+  }).catch(console.log)
       navigator.serviceWorker.register("/sw.js").then(
       (registration) => {
          console.log("Service worker registration succeeded:", registration);
