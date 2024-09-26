@@ -33,7 +33,7 @@
                 @yield('container')
             </main>
         </div>
-        <script src="{{ asset('/sw.js') }}"></script>
+        <!--script src="{{ asset('/sw.js') }}"></script>
 <script>
    if ("serviceWorker" in navigator) {
       // Register a service worker hosted at the root of the
@@ -49,7 +49,7 @@
   } else {
      console.error("Service workers are not supported.");
   }
-</script>
+</script-->
    <script src="https://cdn.tailwindcss.com"></script>
       
         <script src="//cdn.jsdelivr.net/npm/eruda"></script>
