@@ -72,8 +72,7 @@
         
 
    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script type="module" src ="{{asset('/sw.js')}}"></script>
-    <script>eruda.init();
+     <script>eruda.init();
      
     </script>
  
