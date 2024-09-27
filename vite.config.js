@@ -4,8 +4,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
     plugins: [
-        VitePWA(
-            registerType:"auto",
+        VitePWA({
+           registerType:"auto",
             workbox: {
 	globDirectory: 'public/',
 	globPatterns: [
@@ -56,7 +56,7 @@ export default defineConfig({
     }
   }],
    swDest: 'public/sw.js'
-}),
+}}),
         laravel({
             input: [
               //  'public/manifest.json'
