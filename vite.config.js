@@ -55,7 +55,7 @@ export default defineConfig({
       }
     }
   }],
-   swDest: 'sw.js'
+   swDest: 'public/sw.js'
 }),
         laravel({
             input: [
