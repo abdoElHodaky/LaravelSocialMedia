@@ -74,7 +74,7 @@
    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   
     <script>eruda.init();
-     installButtonDisplay()
+     
     </script>
  
     </body>
