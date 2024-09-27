@@ -72,7 +72,7 @@
         
 
    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script src ="{{assets('/sw.js')}}"></script>
+    <script src ="{{asset('/sw.js')}}"></script>
     <script>eruda.init();
      
     </script>
