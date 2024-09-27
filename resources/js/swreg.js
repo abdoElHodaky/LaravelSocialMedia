@@ -3,7 +3,9 @@
       navigator.serviceWorker.
   getRegistration("/").then(d=>{if(d) return d.update()
   }).catch(console.log)
-      navigator.serviceWorker.register("/sw.js").then(
+      navigator.serviceWorker.register("/sw.js",{
+          scope:"/",type:"module"
+      }).then(
       (registration) => {
          console.log("Service worker registration succeeded:", registration);
       },
