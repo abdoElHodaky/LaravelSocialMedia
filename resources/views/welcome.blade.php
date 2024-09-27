@@ -26,7 +26,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        @vite(["resources/css/app.css"])
+        @vite(["resources/css/app.css","resources/js/swreg.js"])
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -68,11 +68,11 @@
             </div>
         </div>
         
-    <script src="{{ asset('/sw.js') }}"></script>
+    
         
-</script>
+
    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-  @vite(["resources/js/swreg.js"])
+  
     <script>eruda.init();
      installButtonDisplay()
     </script>
