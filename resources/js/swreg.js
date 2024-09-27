@@ -61,3 +61,6 @@
         var elem = document.getElementById('install-button');
         elem.parentNode.removeChild(elem);
     }
+
+
+installButtonDisplay()
