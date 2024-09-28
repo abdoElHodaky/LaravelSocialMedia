@@ -1,4 +1,3 @@
-
 {
   "name": "LaravelSocial",
   "short_name": "LSM",
@@ -13,107 +12,107 @@
   "theme_color": "#6777ef",
   "icons": [
     {
-      "src": "16.png",
+      "src": "/16.png",
       "sizes": "16x16"
     },
     {
-      "src": "20.png",
+      "src": "/20.png",
       "sizes": "20x20"
     },
     {
-      "src": "29.png",
+      "src": "/29.png",
       "sizes": "29x29"
     },
     {
-      "src": "32.png",
+      "src": "/32.png",
       "sizes": "32x32"
     },
     {
-      "src": "40.png",
+      "src": "/40.png",
       "sizes": "40x40"
     },
     {
-      "src": "50.png",
+      "src": "/50.png",
       "sizes": "50x50"
     },
     {
-      "src": "57.png",
+      "src": "/57.png",
       "sizes": "57x57"
     },
     {
-      "src": "58.png",
+      "src": "/58.png",
       "sizes": "58x58"
     },
     {
-      "src": "60.png",
+      "src": "/60.png",
       "sizes": "60x60"
     },
     {
-      "src": "64.png",
+      "src": "/64.png",
       "sizes": "64x64"
     },
     {
-      "src": "72.png",
+      "src": "/72.png",
       "sizes": "72x72"
     },
     {
-      "src": "76.png",
+      "src": "/76.png",
       "sizes": "76x76"
     },
     {
-      "src": "80.png",
+      "src": "/80.png",
       "sizes": "80x80"
     },
     {
-      "src": "87.png",
+      "src": "/87.png",
       "sizes": "87x87"
     },
     {
-      "src": "100.png",
+      "src": "/100.png",
       "sizes": "100x100"
     },
     {
-      "src": "114.png",
+      "src": "/114.png",
       "sizes": "114x114"
     },
     {
-      "src": "120.png",
+      "src": "/120.png",
       "sizes": "120x120"
     },
     {
-      "src": "128.png",
+      "src": "/128.png",
       "sizes": "128x128"
     },
     {
-      "src": "144.png",
+      "src": "/144.png",
       "sizes": "144x144"
     },
     {
-      "src": "152.png",
+      "src": "/152.png",
       "sizes": "152x152"
     },
     {
-      "src": "167.png",
+      "src": "/167.png",
       "sizes": "167x167"
     },
     {
-      "src": "180.png",
+      "src": "/180.png",
       "sizes": "180x180"
     },
     {
-      "src": "192.png",
+      "src": "/192.png",
       "sizes": "192x192"
     },
     {
-      "src": "256.png",
+      "src": "/256.png",
       "sizes": "256x256"
     },
     {
-      "src": "512.png",
+      "src": "/512.png",
       "sizes": "512x512"
     },
     {
-      "src": "1024.png",
+      "src": "/1024.png",
       "sizes": "1024x1024"
     }
   ],
