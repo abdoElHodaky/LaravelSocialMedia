@@ -1,6 +1,7 @@
+//import {Workbox} from 'workbox-window';
 window.onload=(event)=>{
 if ("serviceWorker" in navigator){
-const {Workbox} = await import("workbox-window");
+const {Workbox} =  require("workbox-window");
 
 const wb = new Workbox('/sw.js');
 
