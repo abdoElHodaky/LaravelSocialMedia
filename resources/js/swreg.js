@@ -1,5 +1,5 @@
-/*
-const {Workbox} = require('workbox-window');
+import {Workbox} from "workbox-window";
+//const {Workbox} = require('workbox-window');
 
 const wb = new Workbox('/sw.js');
 
@@ -30,13 +30,13 @@ wb.addEventListener('message', event => {
 });
 // Register the service worker after event listeners have been added.
 wb.register();
-*/
+/*
 setTimeout(()=>{
  navigator.serviceWorker.register('/sw.js').then(d=>{
      console.log("Worker Registration Successful",d)
  }).catch(console.log);
 },10000)
-
+*/
     window.addEventListener("beforeinstallprompt", (e) => {
         // Prevent the mini-infobar from appearing on mobile
         e.preventDefault();
