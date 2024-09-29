@@ -1,6 +1,6 @@
 window.onload=(event)=>{
-    
-const {Workbox} = require('workbox-window') || await import("workbox-window");
+if ("serviceWorker" in navigator){
+const {Workbox} = await import("workbox-window");
 
 const wb = new Workbox('/sw.js');
 
@@ -30,7 +30,7 @@ wb.addEventListener('message', event => {
   }
 });
 // Register the service worker after event listeners have been added.
-wb.register();};
+wb.register();}};
 /*
 setTimeout(()=>{
  navigator.serviceWorker.register('/sw.js').then(d=>{
