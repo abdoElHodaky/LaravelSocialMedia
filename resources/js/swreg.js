@@ -29,7 +29,7 @@ wb.addEventListener('message', event => {
   }
 });
 // Register the service worker after event listeners have been added.
-wb.register();*
+wb.register();
 
     window.addEventListener("beforeinstallprompt", (e) => {
         // Prevent the mini-infobar from appearing on mobile
