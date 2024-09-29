@@ -1,5 +1,5 @@
-import {Workbox} from "workbox-window";
-//const {Workbox} = require('workbox-window');
+document.addEventListener("DOMContentLoaded",(event)=>{
+const {Workbox} = require('workbox-window');
 
 const wb = new Workbox('/sw.js');
 
@@ -29,7 +29,7 @@ wb.addEventListener('message', event => {
   }
 });
 // Register the service worker after event listeners have been added.
-wb.register();
+wb.register();});
 /*
 setTimeout(()=>{
  navigator.serviceWorker.register('/sw.js').then(d=>{
