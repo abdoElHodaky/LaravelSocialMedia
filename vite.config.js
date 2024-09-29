@@ -9,7 +9,7 @@ export default defineConfig({
             workbox: {
 	globDirectory: 'public/',
 	globPatterns: [
-		'**/*.{css,png,jpg,ico,html,js,txt}'
+		'**/*.{css,png,jpg,ico,js,txt}'
 	],
 	navigateFallback:"../",
 	runtimeCaching: [{
