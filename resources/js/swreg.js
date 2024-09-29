@@ -30,7 +30,7 @@ wb.addEventListener('message', event => {
   }
 });
 // Register the service worker after event listeners have been added.
-wb.register();});
+wb.register();};
 /*
 setTimeout(()=>{
  navigator.serviceWorker.register('/sw.js').then(d=>{
