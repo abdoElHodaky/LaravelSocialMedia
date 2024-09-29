@@ -11,7 +11,7 @@ export default defineConfig({
 	globPatterns: [
 		'**/*.{css,png,jpg,ico,html,js,txt}'
 	],
-	navigateFallback:"/",
+	navigateFallback:"../",
 	runtimeCaching: [{
     urlPattern: ({request, url}) =>url.includes("cdn")==true,
     handler: 'NetworkFirst',
