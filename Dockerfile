@@ -22,7 +22,8 @@ ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
 RUN npm install workbox-window --save && \
-composer install  && npm run build
+composer install  && npm run build && \
+cp /resources/js/swreg.js public/swreg.js
 #RUN php artisan db:wipe --drop-types --force 
 #RUN php artisan migrate:install
 #RUN php artisan migrate --force
