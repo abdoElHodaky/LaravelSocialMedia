@@ -1,21 +1,35 @@
 
-   if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.
-  getRegistration("/").then(d=>{if(d) return d.update()
-  }).catch(console.log)
-      navigator.serviceWorker.register("/sw.js",{
-          scope:"/",type:"module"
-      }).then(
-      (registration) => {
-         console.log("Service worker registration succeeded:", registration);
-      },
-      (error) => {
-         console.error(`Service worker registration failed: ${error}`);
-      },
-    );
-  } else {
-     console.error("Service workers are not supported.");
+const {Workbox} = require('workbox-window');
+
+const wb = new Workbox('/sw.js');
+
+wb.addEventListener('activated', event => {
+  // `event.isUpdate` will be true if another version of the service
+  // worker was controlling the page when this version was registered.
+  if (!event.isUpdate) {
+    console.log('Service worker activated for the first time!');
+    // If your service worker is configured to precache assets, those
+    // assets should all be available now.
   }
+    const urlsToCache = [
+    location.href,
+    ...performance.getEntriesByType('resource').map(r => r.name),
+  ];
+  // Send that list of URLs to your router in the service worker.
+  wb.messageSW({
+    type: 'CACHE_URLS',
+    payload: {urlsToCache},
+  });
+});
+wb.addEventListener('message', event => {
+  if (event.data.type === 'CACHE_UPDATED') {
+    const {updatedURL} = event.data.payload;
+
+    console.log(`A newer version of ${updatedURL} is available!`);
+  }
+});
+// Register the service worker after event listeners have been added.
+wb.register();*
 
     window.addEventListener("beforeinstallprompt", (e) => {
         // Prevent the mini-infobar from appearing on mobile
