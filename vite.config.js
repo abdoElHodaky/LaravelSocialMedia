@@ -63,7 +63,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/js/dashboard.js',
-                'resources/js/swreg.js',
+               // 'resources/js/swreg.js',
                 
             ],
             refresh: true,
