@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded",(event)=>{
-const {Workbox} = require('workbox-window');
+window.onload=(event)=>{
+    
+const {Workbox} = require('workbox-window') || await import("workbox-window");
 
 const wb = new Workbox('/sw.js');
 
