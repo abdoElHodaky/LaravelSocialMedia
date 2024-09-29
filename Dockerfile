@@ -22,7 +22,7 @@ ENV YARN_ALLOW_SUPERUSER 1
 ENV NPX_ALLOW_SUPERUSER 1
 RUN chmod 777 ./*
 RUN npm install workbox-window --save && \
-composer install  
+composer install  && npm run build
 #RUN php artisan db:wipe --drop-types --force 
 #RUN php artisan migrate:install
 #RUN php artisan migrate --force
