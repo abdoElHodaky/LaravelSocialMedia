@@ -1,7 +1,7 @@
-FROM spacetabio/roadrunner-alpine:8.1-base-1.11.0
+FROM spacetabio/roadrunner-alpine:8.0-base-1.11.0
 RUN apk add -U --no-cache nghttp2-dev nodejs npm unzip tzdata
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-RUN docker-php-ext-install bcmath 
+#RUN docker-php-ext-install bcmath 
 COPY . /var/www/html
 WORKDIR /var/www/html
 
@@ -28,7 +28,7 @@ ENV OCTANE_SERVER roadrunner
 
 #RUN echo 'pm.max_children = 15' >> /usr/local/etc/php-fpm.d/zz-docker.conf && \
 #echo 'pm.max_requests = 500' >> /usr/local/etc/php-fpm.d/zz-docker.conf
-RUN chmod -R 777 . && composer install &&\
+RUN chmod -R 777 . && composer update -W &&\
 composer require laravel/octane && npm install workbox-window --save &&\
 npm run build 
 RUN yes | php artisan octane:install --server=roadrunner
