@@ -16,6 +16,7 @@ ENV APP_ENV production
 ENV APP_DEBUG true
 ENV LOG_CHANNEL stderr
 ENV APP_URL 0.0.0.0
+ENV ROADRUNNER_PORT 85
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
@@ -32,5 +33,5 @@ composer require laravel/octane && npm install workbox-window --save &&\
 npm run build 
 RUN yes | php artisan octane:install --server=roadrunner
 #RUN npm run build && php artisan storage:link
-
-CMD ["php artisan octane:start","--workers=4","--server=roadrunner","--port=8080"]
+EXPOSE ${ROADRUNNER_PORT} 
+CMD ["php artisan octane:start","--workers=4","--server=roadrunner","--port=85"]
